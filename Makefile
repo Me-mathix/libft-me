@@ -22,7 +22,11 @@ SRC = ./srcs/ft_bzero.c \
 		./srcs/ft_strnstr.c \
 		./srcs/ft_atoi.c \
 		./srcs/ft_calloc.c \
-		./srcs/ft_strdup.c
+		./srcs/ft_strdup.c \
+		./srcs/ft_substr.c \
+		./srcs/ft_strjoin.c \
+		./srcs/ft_strtrim.c \
+		./srcs/ft_split.c
 
 OBJ = $(SRC:.c=.o)
 
