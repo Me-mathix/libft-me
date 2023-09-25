@@ -7,6 +7,8 @@ SRC = ./srcs/ft_bzero.c \
 		./srcs/ft_isdigit.c \
 		./srcs/ft_isprint.c \
 		./srcs/ft_memcpy.c \
+		./srcs/ft_memcmp.c \
+		./srcs/ft_memchr.c \
 		./srcs/ft_memset.c \
 		./srcs/ft_memmove.c \
 		./srcs/ft_strlen.c \

@@ -23,6 +23,8 @@ void *ft_memmove(void *dest, const void *src, size_t n)
 
 	i = 0;
 	j = 0;
+	if (!dest || !src)
+		return('dest')
 	while (j < n)
 	{
 		dump[j] = *(char *)src;
