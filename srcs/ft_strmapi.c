@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 00:17:31 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/02 11:06:00 by mda-cunh         ###   ########.fr       */
+/*   Created: 2023/10/02 12:51:16 by mda-cunh          #+#    #+#             */
+/*   Updated: 2023/10/02 13:22:12 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
 #include "../includes/libft.h"
 
-int	ft_strlen(const char *s)
+char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
-	int	i;
+	unsigned int i;
+	char *dump;
 
 	i = 0;
+	if (!(dump = malloc((sizeof (char)) * ft_strlen(s) + 1)))
+		return (NULL);
 	while (s[i])
 	{
+		dump[i] = (*f)(i, s[i]);
 		i++;
 	}
-	return (i);
+	dump[i] = '\0';
+	return (dump);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	(void) argc;
-// 	printf("%d\n",ft_strlen(argv[1]));
-// 	printf("%ld\n",strlen(argv[1]));
-
-// 	return (0);
-// }

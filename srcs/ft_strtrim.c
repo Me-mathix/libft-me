@@ -3,14 +3,29 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mathieu <mathieu@student.42.fr>            +#+  +:+       +#+        */
+/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 19:11:56 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/30 12:39:49 by mathieu          ###   ########.fr       */
+/*   Updated: 2023/10/02 11:58:51 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
+
+
+int is_only_space(char const *str)
+{
+    int i;
+
+    i = 0;
+    while ((str[i] <= 13 && str[i] >= 9) || str[i] == 32)
+    {
+        i++;
+    }
+    if (str[i] == '\0')
+      return (1);
+    return (0);
+}
 
 int isFromSet(char const chr, char const *set)
 {
@@ -64,13 +79,16 @@ char *ft_strtrim(char const *s1, char const *set)
 	int s1_len;
 	int i;
 
+	if (is_only_space(s1) == 1)
+		return("");
+	if (!s1 && !set)
+		return(NULL);
 	trim_size = startrim(s1, set) + endrim(s1, set);
 	start_trim = startrim(s1, set);
 	end_trim = endrim(s1, set);
 	s1_len = ft_strlen(s1) - trim_size;
 	i = 0;
-	trimed = malloc((sizeof (char)) * s1_len + 1);
-	if(!trimed)
+	if (!(trimed = malloc((sizeof (char)) * s1_len + 1)))
 		return(NULL);
 	while (i + start_trim < ft_strlen(s1) - end_trim)
 	{

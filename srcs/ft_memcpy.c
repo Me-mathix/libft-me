@@ -6,13 +6,13 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:10:59 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/12 14:36:20 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:06:00 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <stdio.h>
 // #include <string.h>
-#include "libft.h"
+#include "../includes/libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {

@@ -1,36 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 00:17:31 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/02 11:06:00 by mda-cunh         ###   ########.fr       */
+/*   Created: 2023/10/02 13:25:47 by mda-cunh          #+#    #+#             */
+/*   Updated: 2023/10/02 13:28:18 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
 #include "../includes/libft.h"
 
-int	ft_strlen(const char *s)
+void ft_putchar_fd(char c, int fd)
 {
-	int	i;
-
-	i = 0;
-	while (s[i])
-	{
-		i++;
-	}
-	return (i);
+	write(fd, &c, 1);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	(void) argc;
-// 	printf("%d\n",ft_strlen(argv[1]));
-// 	printf("%ld\n",strlen(argv[1]));
-
-// 	return (0);
-// }

@@ -6,14 +6,14 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 12:00:05 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/13 12:33:06 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:06:00 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 // #include <string.h>
 // #include <stdio.h>
 // #include <stdlib.h>
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

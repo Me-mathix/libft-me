@@ -6,11 +6,11 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 00:24:29 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/13 12:11:27 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:06:00 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 int	ft_toupper(int c)
 {

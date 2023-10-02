@@ -1,36 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_striteri.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/09/12 00:17:31 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/10/02 11:06:00 by mda-cunh         ###   ########.fr       */
+/*   Created: 2023/10/02 13:11:59 by mda-cunh          #+#    #+#             */
+/*   Updated: 2023/10/02 13:17:15 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <string.h>
 #include "../includes/libft.h"
 
-int	ft_strlen(const char *s)
+void ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
-	int	i;
-
+	unsigned int i;
+	unsigned int sizeS;
+	
 	i = 0;
-	while (s[i])
+	sizeS =  (unsigned int) ft_strlen(s);
+	while (i < sizeS)
 	{
+		(*f)(i, s);
+		s++;
 		i++;
 	}
-	return (i);
 }
-
-// int	main(int argc, char **argv)
-// {
-// 	(void) argc;
-// 	printf("%d\n",ft_strlen(argv[1]));
-// 	printf("%ld\n",strlen(argv[1]));
-
-// 	return (0);
-// }

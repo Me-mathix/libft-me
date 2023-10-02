@@ -6,11 +6,11 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 22:28:55 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/13 22:37:19 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/10/02 11:06:00 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../includes/libft.h"
 
 char *ft_strdup(const char *s)
 {
