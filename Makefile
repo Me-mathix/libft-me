@@ -33,7 +33,16 @@ SRC = ./srcs/ft_bzero.c \
 		./srcs/ft_putchar_fd.c \
 		./srcs/ft_putstr_fd.c \
 		./srcs/ft_putendl_fd.c \
-		./srcs/ft_putnbr_fd.c
+		./srcs/ft_putnbr_fd.c \
+		./srcs/ft_lstnew.c \
+		./srcs/ft_lstadd_front.c \
+		./srcs/ft_lstsize.c \
+		./srcs/ft_lstlast.c \
+		./srcs/ft_lstadd_back.c \
+		./srcs/ft_lstdelone.c \
+		./srcs/ft_lstclear.c \
+		./srcs/ft_lstiter.c \
+		./srcs/ft_lstmap.c
 
 OBJ = $(SRC:.c=.o)
 
