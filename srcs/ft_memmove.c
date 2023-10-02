@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
+/*   By: mathieu <mathieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 12:31:39 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/13 00:06:48 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/09/29 20:24:50 by mathieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,30 +15,48 @@
 // #include <string.h>
 #include "libft.h"
 
-void *ft_memmove(void *dest, const void *src, size_t n)
-{
-	size_t	i;
-	size_t	j;
-	char 	dump[n];
+// void *ft_memmove(void *dest, const void *src, size_t n)
+// {
+// 	unsigned long	i;
+// 	unsigned long	j;
+// 	char 	dump[n];
 
-	i = 0;
-	j = 0;
-	if (!dest || !src)
-		return('dest')
-	while (j < n)
-	{
-		dump[j] = *(char *)src;
-		j++;
-		src++;
-	}
-	while (i < n)
-	{
-			*(char *)dest = dump[i];
-			i++;
-			dest++;
-	}
-	return (dest - i);
+// 	i = 0;
+// 	j = 0;
+// 	if (!dest && !src)
+// 		return(dest);
+// 	while (j < n)
+// 	{
+// 		dump[j] = *(char *)src;
+// 		j++;
+// 		src++;
+// 	}
+// 	while (i < n)
+// 	{
+// 			*(char *)dest = dump[i];
+// 			i++;
+// 			dest++;
+// 	}
+// 	return (dest - i);
+// }
+// #include "libft.h"
+
+void	*ft_memmove(void *dst, const void *src, size_t n)
+{
+	char *dest = dst;
+	const char *srce = src;
+	if (!dest && !src)
+		return(dest);
+	if (srce < dest) {
+		srce += n;
+		dest += n;
+		while (n-- > 0)
+			*--dest = *--srce;
+	} else
+		ft_memcpy(dst, src, n);
+	return dest;
 }
+
 
 // int main (void)
 // {

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
+/*   By: mathieu <mathieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 11:43:30 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/13 11:51:48 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/09/30 11:15:17 by mathieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char *ft_strrchr(const char *s, int c)
 	i = 0;
 	sync = 0;
 	if(s[i] == '\0')
-		return((char *)s);
+		return(0);
 	while (s[i])
 	{
 		if (s[i] == c)

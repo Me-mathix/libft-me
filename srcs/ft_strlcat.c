@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
+/*   By: mathieu <mathieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:38:57 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/12 22:21:17 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/09/30 11:30:30 by mathieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,10 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 	size_t				src_len;
 
 	i = 0;
-	dst_len = ft_strlen(dst);
 	src_len = ft_strlen(src);
-	if (size == 0)
+	if ((size == 0) && (!dst))
 		return (src_len);
+	dst_len = ft_strlen(dst);
 	if (dst_len > size)
 		return (src_len + size);
 	while (src[i] && (dst_len + i < size - 1))

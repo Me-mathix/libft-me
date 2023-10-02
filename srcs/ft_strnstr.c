@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
+/*   By: mathieu <mathieu@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:38:32 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/09/13 14:08:26 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/09/30 11:39:03 by mathieu          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 			{
 				j++;
 			}
-			if (s2[j] == '\0' && i + j < n)
+			if (s2[j] == '\0' && i + j - 1 < n)
 				return ((char *)s1 + i);
 		}
 		j = 0;
