@@ -84,4 +84,4 @@ so:
 	$(CC) -nostartfiles -fPIC $(FLAGS) $(SRC)
 	gcc -nostartfiles -shared -o libft.so $(OBJ)
 
-.PHONY : all clean fclean re so
+.PHONY : all clean fclean re so bonus
