@@ -16,22 +16,22 @@ char *ft_strrchr(const char *s, int c)
 {
 	int i;
 	int sync;
+	char car;
 
 	i = 0;
 	sync = 0;
-	if(s[i] == '\0')
-		return(0);
+	car = (char) c;
 	while (s[i])
 	{
-		if (s[i] == c)
+		if (s[i] == car)
 			sync = i;
 		i++;
-		if (s[i] == c)
+		if (s[i] == car)
 			sync = i;
 	}
 	if (sync > 0)
 		return ((char *)s + sync);
-	if ((sync == 0) && (s[0] == c))
+	if ((sync == 0) && (s[0] == car))
 		return((char *)s);
 	return (0);
 }

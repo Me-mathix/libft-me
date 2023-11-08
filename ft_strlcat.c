@@ -33,3 +33,15 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 	dst[dst_len + i] = '\0';
 		return (dst_len + src_len);
 }
+
+#include <stdio.h>
+#include <string.h>
+
+int main (void)
+{
+	char bbb[30]; memset(bbb, 0, 30);
+	if (ft_strlcat(bbb, "123", 0) == 3 && !strcmp(bbb, ""))
+		printf ("ERROR");
+	printf ("%zu\n", ft_strlcat(bbb, "123", 0));
+	printf ("%d\n", strcmp(bbb, ""));
+}

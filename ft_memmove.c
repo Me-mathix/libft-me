@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 
-// #include <unistd.h>
-// #include <string.h>
 #include "libft.h"
 
 // void *ft_memmove(void *dest, const void *src, size_t n)
@@ -47,16 +45,17 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 	const char *srce = src;
 	if (!dest && !src)
 		return(dest);
-	if (srce < dest) {
-		srce += n;
-		dest += n;
-		while (n-- > 0)
-			*--dest = *--srce;
-	} else
+	if (src < dst) {
+		while (n--)
+			dest[n] = srce[n];
+	} 
+	else
 		ft_memcpy(dst, src, n);
 	return dest;
 }
 
+// #include <unistd.h>
+// #include <string.h>
 
 // int main (void)
 // {
