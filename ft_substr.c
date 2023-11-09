@@ -6,7 +6,7 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 16:13:49 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/07 22:31:35 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/09 22:47:16 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,24 +16,22 @@ char *ft_substr(char const *s, unsigned int start, size_t len)
 {
 	unsigned int i;
 	char *sub;
+	
 
 	i = 0;
 	if (!s)
-		return ("");
+		return (NULL);
 	if (start >= (unsigned int)ft_strlen(s))
-	{
-		sub = malloc(2);
-		if (!sub)
-			return (NULL);
-		sub[0] = '\0';
-		return (sub);
-	}
-	sub = malloc((sizeof (char)) * len + 1);
+		return (ft_calloc(1, 1));
+	s += start;
+	if (len > ft_strlen(s))
+		len = ft_strlen(s);
+	sub = malloc((sizeof (char)) * (len + 1));
 	if (!sub)
 		return (NULL);
-	while (i < len)
+	while (i < len && s[i])
 	{
-		sub[i] = s[i + start];
+		sub[i] = s[i];
 		i++;
 	}
 	sub[i] = '\0';

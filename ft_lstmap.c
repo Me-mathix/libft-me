@@ -6,7 +6,7 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 21:45:25 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/07 22:31:35 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/09 23:11:48 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list *sav;
 
 	newlst = NULL;
+	if (!lst || !del || !f)
+		return (NULL);
 	while (lst)
 	{
 		if (!(sav = ft_lstnew((*f)(lst->content))))

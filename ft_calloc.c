@@ -12,7 +12,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdio.h>
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
@@ -22,7 +21,6 @@ void *ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	if ((int) nmemb < 0 && (int) size < 0)
 		return (NULL);
-	printf ("%lu\n", nmemb * size);
 	alloc = malloc(nmemb * size);
 	if (!alloc)
 		return(NULL);
@@ -30,21 +28,21 @@ void *ft_calloc(size_t nmemb, size_t size)
 	return (alloc);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
+// #include <stdio.h>
+// #include <stdlib.h>
 
-int main(int argc, char **argv)
-{
-	(void) argc;		
-	void *ptr_call;
-	void *ptr_cacalloc;
-	size_t nmemb = SIZE_MAX;
-	ptr_call = calloc(atoi(argv[1]), atoi(argv[2]));
-	ptr_cacalloc = ft_calloc(atoi(argv[1]), atoi(argv[2]));
+// int main(int argc, char **argv)
+// {
+// 	(void) argc;		
+// 	void *ptr_call;
+// 	void *ptr_cacalloc;
+// 	size_t nmemb = SIZE_MAX;
+// 	ptr_call = calloc(atoi(argv[1]), atoi(argv[2]));
+// 	ptr_cacalloc = ft_calloc(atoi(argv[1]), atoi(argv[2]));
 
-	printf("%p\n/%p\n", ptr_call ,ptr_cacalloc);
-	printf("%lu\n", nmemb);
-	printf("%d", (unsigned int) nmemb);
-	free(ptr_cacalloc);
-	free(ptr_call);
-}
+// 	printf("%p\n/%p\n", ptr_call ,ptr_cacalloc);
+// 	printf("%lu\n", nmemb);
+// 	printf("%d", (unsigned int) nmemb);
+// 	free(ptr_cacalloc);
+// 	free(ptr_call);
+// }

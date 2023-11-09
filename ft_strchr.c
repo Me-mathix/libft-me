@@ -6,7 +6,7 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 00:32:39 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/07 22:31:35 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/09 23:10:36 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,21 @@ char *ft_strchr(const char *s, int c)
 
 	i = 0;
 	car = (char) c;
-	if(s[i] == '\0')
-		return(0);
-	while (s[i])
+	while (s[i] != car)
 	{
-		if (s[i] == car)
-			return ((char *)s + i);
+		if (s[i] == '\0')
+			return(0);
 		i++;
-		if (s[i] == car)
-			return ((char *)s + i);
 	}
-	return(0);
+	return((char *)s + i);
 }
+// #include <stdio.h>
+// #include <string.h>
+// #include <stdlib.h>
+
+// int main(void)
+// {
+// 	printf("%s", strchr("", '\0'));
+// 	printf("%s", ft_strchr("", '\0'));
+		
+// }

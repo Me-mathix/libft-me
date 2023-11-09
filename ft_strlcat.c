@@ -6,7 +6,7 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:38:57 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/07 22:31:35 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/09 11:12:08 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 
 	i = 0;
 	src_len = ft_strlen(src);
-	if ((size == 0) && (!dst))
+	while (size == 0)
 		return (src_len);
 	dst_len = ft_strlen(dst);
 	if (dst_len > size)
@@ -34,14 +34,16 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		return (dst_len + src_len);
 }
 
-#include <stdio.h>
-#include <string.h>
+// #include <stdio.h>
+// #include <string.h>
 
-int main (void)
-{
-	char bbb[30]; memset(bbb, 0, 30);
-	if (ft_strlcat(bbb, "123", 0) == 3 && !strcmp(bbb, ""))
-		printf ("ERROR");
-	printf ("%zu\n", ft_strlcat(bbb, "123", 0));
-	printf ("%d\n", strcmp(bbb, ""));
-}
+// int main (void)
+// {
+// 	char aaa[30]; memset(aaa, 0, 30);
+// 	char bbb[30]; memset(bbb, 0, 30);
+	
+// 	if (strlcat(bbb, "123", 0) == 3 && !strcmp(bbb, ""))
+// 		printf ("ERROR");
+// 	printf ("%zu\n", ft_strlcat(bbb, "123", 0));
+// 	printf ("%d\n", strcmp(bbb, ""));
+// }
