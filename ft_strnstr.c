@@ -6,7 +6,7 @@
 /*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/13 13:38:32 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/07 22:31:35 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:28:09 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 				return ((char *)s1 + i);
 		}
 		j = 0;
-	i++;
+		i++;
 	}
 	return (0);
 }

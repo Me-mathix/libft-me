@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mda-cunh <mda-cunh@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 20:35:25 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/10 16:06:34 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/10 21:27:47 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	countword(char const *s, char c)
 				i++;
 		}
 		else
-		i++;
+			i++;
 	}
 	return (count);
 }
@@ -43,7 +43,7 @@ int	countchar(const char *s, int i, char c)
 
 	count = 0;
 	while (i-- > 0 && s[i] != c)
-			count++;
+		count++;
 	return (count);
 }
 
