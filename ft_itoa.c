@@ -34,7 +34,6 @@ int	lennum(long n)
 	return (count);
 }
 
-
 char	*ft_itoa(int n)
 {
 	long	nb;
@@ -43,7 +42,7 @@ char	*ft_itoa(int n)
 
 	nb = (long) n;
 	i = lennum(nb);
-	tab = malloc((sizeof (char) * (i + 1)));
+	tab = ft_calloc(sizeof (char), i + 1);
 	if (!tab)
 		return (NULL);
 	tab[i] = '\0';
@@ -55,7 +54,7 @@ char	*ft_itoa(int n)
 	while (i)
 	{
 		if (tab[i - 1] == '-')
-			break;
+			break ;
 		tab[i - 1] = nb % 10 + 48;
 		nb /= 10;
 		i--;

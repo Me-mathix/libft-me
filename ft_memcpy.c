@@ -41,4 +41,3 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 // 	void *src = NULL;
 //    return(0);
 // }
-

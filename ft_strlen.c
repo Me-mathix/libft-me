@@ -33,7 +33,7 @@ size_t	ft_strlen(const char *s)
 // 	(void) argc;
 // 	(void) argv;
 // 	void *tab = NULL; 
-	
+
 // 	printf("%ld\n",ft_strlen(tab));
 // 	printf("%ld\n",strlen(tab));
 

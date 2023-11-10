@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
+/*   By: mda-cunh <mda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/12 14:38:57 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/09 11:12:08 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/10 15:51:13 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t ft_strlcat(char *dst, const char *src, size_t size)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t				dst_len;
 	size_t				i;
@@ -31,7 +31,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 		i++;
 	}
 	dst[dst_len + i] = '\0';
-		return (dst_len + src_len);
+	return (dst_len + src_len);
 }
 
 // #include <stdio.h>
@@ -41,7 +41,7 @@ size_t ft_strlcat(char *dst, const char *src, size_t size)
 // {
 // 	char aaa[30]; memset(aaa, 0, 30);
 // 	char bbb[30]; memset(bbb, 0, 30);
-	
+
 // 	if (strlcat(bbb, "123", 0) == 3 && !strcmp(bbb, ""))
 // 		printf ("ERROR");
 // 	printf ("%zu\n", ft_strlcat(bbb, "123", 0));

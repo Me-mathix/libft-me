@@ -34,7 +34,7 @@ void	*ft_memset(void *str, int c, size_t n)
 //    char *ste = NULL;
 //    char *str = NULL;
 //    printf("%p\n",ft_memset(ste,'e',42));
- 
+
 //    printf("%p\n",memset(str,'e',42));
 //    return(0);
 // }

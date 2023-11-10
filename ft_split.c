@@ -3,20 +3,23 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mda-cunh <mda-cunh@42paris.fr>             +#+  +:+       +#+        */
+/*   By: mda-cunh <mda-cunh@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/24 20:35:25 by mda-cunh          #+#    #+#             */
-/*   Updated: 2023/11/09 23:22:07 by mda-cunh         ###   ########.fr       */
+/*   Updated: 2023/11/10 16:06:34 by mda-cunh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <unistd.h>
+#include <string.h>
 
-
-int countword(char const *s, char c)
+int	countword(char const *s, char c)
 {
-	int i;
-	int count;
+	int	i;
+	int	count;
 
 	i = 0;
 	count = 0;
@@ -25,7 +28,7 @@ int countword(char const *s, char c)
 		if (s[i] != c && s[i])
 		{
 			count++;
-			while(s[i] != c && s[i])
+			while (s[i] != c && s[i])
 				i++;
 		}
 		else
@@ -33,23 +36,21 @@ int countword(char const *s, char c)
 	}
 	return (count);
 }
-int countchar(const char *s, int i, char c)
+
+int	countchar(const char *s, int i, char c)
 {
-	int count;
+	int	count;
 
 	count = 0;
-	while (s[i] != c && s[i])
-	{
-		i--;
-		count++;
-	}
+	while (i-- > 0 && s[i] != c)
+			count++;
 	return (count);
 }
 
-char *ft_strndup(const char *s, int from, int to)
+char	*ft_strndup(const char *s, int from, int to)
 {
-	int i;
-	char *dup;
+	int		i;
+	char	*dup;
 
 	i = 0;
 	dup = malloc((sizeof (char)) * (to + 1));
@@ -64,9 +65,10 @@ char *ft_strndup(const char *s, int from, int to)
 	dup[i] = '\0';
 	return (dup);
 }
+
 static void	ft_free(char **strs, int i)
 {
-	while (i >= 0)
+	while (strs[i])
 	{
 		free(strs[i]);
 		i++;
@@ -74,11 +76,11 @@ static void	ft_free(char **strs, int i)
 	free(strs);
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	int	i;
-	int num_word;
-	char **splited;
+	int		i;
+	int		num_word;
+	char	**splited;
 
 	if (!s)
 		return (NULL);
@@ -86,125 +88,38 @@ char **ft_split(char const *s, char c)
 	num_word = countword(s, c);
 	splited = malloc((sizeof (char *)) * (num_word + 1));
 	if (!splited)
-		return(NULL);
+		return (NULL);
 	while (num_word--)
 	{
 		while (s[i] == c && s[i])
-		i--;
+			i--;
 		if (s[i] != c && s[i])
 		{
-			splited[num_word] = ft_strndup(s, i, countchar(s, i, c));
+			splited[num_word] = ft_strndup(s, i, countchar(s, i, c) + 1);
 			if (!splited[num_word])
 				return (ft_free(splited, num_word), NULL);
-			i = i - countchar(s, i , c);
+			i = i - countchar(s, i, c) - 1;
 		}
 	}
 	splited[countword(s, c)] = 0;
 	return (splited);
 }
 
-
-// #include <stdlib.h>
-// #include <unistd.h>
-
-// void	ft_print_result(char const *s)
+// int		main(int argc, char **argv)
 // {
-// 	int		len;
+// 	char **split;
+// 	int i = 0;
+// 	(void)argc;
+// 	(void)argv;
 
-// 	len = 0;
-// 	while (s[len])
-// 		len++;
-// 	write(1, s, len);
-// }
+// 	// split = ft_split(strdup("Tripouille"), ' ');
+// 	split = ft_split("  tripouille  42  ", ' ');
 
-// int		main(int argc, const char *argv[])
-// {
-// 	char	**tabstr;
-// 	int		i;
-// 	int		arg;
-
-// 	alarm(5);
-// 	if (argc == 1)
-// 		return (0);
-// 	i = 0;
-// 	if ((arg = atoi(argv[1])) == 1)
+// 	while(split[i])
 // 	{
-// 		if (!(tabstr = ft_split("          ", ' ')))
-// 			ft_print_result("NULL");
-// 		else
-// 		{
-// 			while (tabstr[i] != NULL)
-// 			{
-// 				ft_print_result(tabstr[i]);
-// 				write(1, "\n", 1);
-// 				i++;
-// 			}
-// 		}
+// 		printf("%s\n", split[i]);
+// 		i++;
 // 	}
-// 	else if (arg == 2)
-// 	{
-// 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse", ' ')))
-// 			ft_print_result("NULL");
-// 		else
-// 		{
-// 			while (tabstr[i] != NULL)
-// 			{
-// 				ft_print_result(tabstr[i]);
-// 				write(1, "\n", 1);
-// 				i++;
-// 			}
-// 		}
-// 	}
-// 	else if (arg == 3)
-// 	{
-// 		if (!(tabstr = ft_split("   lorem   ipsum dolor     sit amet, consectetur   adipiscing elit. Sed non risus. Suspendisse   ", ' ')))
-// 			ft_print_result("NULL");
-// 		else
-// 		{
-// 			while (tabstr[i] != NULL)
-// 			{
-// 				ft_print_result(tabstr[i]);
-// 				write(1, "\n", 1);
-// 				i++;
-// 			}
-// 		}
-// 	}
-// 	else if (arg == 4)
-// 	{
-// 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'i')))
-// 			ft_print_result("NULL");
-// 		else
-// 		{
-// 			while (tabstr[i] != NULL)
-// 			{
-// 				ft_print_result(tabstr[i]);
-// 				write(1, "\n", 1);
-// 				i++;
-// 			}
-// 		}
-// 		free (tabstr[i]);
-// 	}
-// 	else if (arg == 5)
-// 	{
-// 		if (!(tabstr = ft_split("lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi.", 'z')))
-// 			ft_print_result("NULL");
-// 		else
-// 		{
-// 			while (tabstr[i] != NULL)
-// 			{
-// 				ft_print_result(tabstr[i]);
-// 				write(1, "\n", 1);
-// 				i++;
-// 			}
-// 		}
-// 	}
-// 	else if (arg == 6)
-// 	{
-// 		if (!(tabstr = ft_split("", 'z')))
-// 			ft_print_result("NULL");
-// 		else
-// 			if (!tabstr[0])
-// 				ft_print_result("ok\n");
-// 	}
-// 	return (0);
+// 	printf("%s\n", split[i]);
+// 	ft_free(split, 0);
 // }

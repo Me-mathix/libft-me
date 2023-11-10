@@ -21,7 +21,6 @@ int	ft_isalpha(int c)
 	return (0);
 }
 
-
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <ctype.h>

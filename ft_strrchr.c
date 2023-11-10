@@ -12,11 +12,11 @@
 
 #include "libft.h"
 
-char *ft_strrchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	int i;
-	int sync;
-	char car;
+	int		i;
+	int		sync;
+	char	car;
 
 	i = 0;
 	sync = 0;
@@ -32,6 +32,6 @@ char *ft_strrchr(const char *s, int c)
 	if (sync > 0)
 		return ((char *)s + sync);
 	if ((sync == 0) && (s[0] == car))
-		return((char *)s);
+		return ((char *)s);
 	return (0);
 }
